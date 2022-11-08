@@ -1,15 +1,26 @@
-let n = 3;
-let winningButton;
-const onClick = function() {
-  winningButton = winningButton ? winningButton : Math.floor(Math.random() * n);
-  if (winningButton == this.id) {
-    alert("Congratulations! You've guessed the button!")
-  }
-}
-for (let i = 0; i < n; ++i) {
-  const buton = document.createElement("button")
-  document.querySelector("body").appendChild(buton)
-  buton.id = i
-  buton.innerText = i;
-  buton.addEventListener("click", onClick);
-}
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <title>Guess the button</title>
+  </head>
+  <body>
+    <script>
+      let n = 3;
+      let winningButton;
+      const onClick = function() {
+        winningButton = winningButton ? winningButton : Math.floor(Math.random() * n);
+        if (winningButton == this.id) {
+          alert("Congratulations! You've guessed the button!")
+        }
+      }
+      for (let i = 1; i <= n; ++i) {
+        const buton = document.createElement("button")
+        document.querySelector("body").appendChild(buton)
+        buton.id = i
+        buton.innerText = i;
+        buton.addEventListener("click", onClick);
+      }
+    </script>
+  </body>
+</html>
